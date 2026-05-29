@@ -108,17 +108,27 @@ html, body { background: #000; font-family: 'Roboto', Arial, sans-serif; -webkit
 .pricing { background: #fff; padding: 30px 18px 22px; text-align: center; }
 .pricing .from {
   font-size: 34px; font-weight: 700; color: #000;
-  text-decoration: line-through; text-decoration-color: #F81111;
-  text-decoration-thickness: 3px;
   margin-bottom: 8px;
 }
+.pricing .from .strike {
+  color: #F81111;
+  text-decoration: line-through;
+  text-decoration-color: #F81111;
+  text-decoration-thickness: 3px;
+}
 .pricing .for-only {
-  font-size: 34px; font-weight: 700; color: #0B8E00;
-  margin-bottom: 14px;
+  font-size: 34px; font-weight: 700; color: #000;
+  margin-bottom: 18px;
+}
+.pricing .for-only .green {
+  color: #0B8E00;
 }
 .pricing .yes-only {
-  font-size: 54px; font-weight: 700; color: #0B8E00;
+  font-size: 54px; font-weight: 700; color: #000;
   line-height: 1.05; margin-bottom: 18px;
+}
+.pricing .yes-only .green {
+  color: #0B8E00;
 }
 .pricing .moment {
   font-size: 27px; font-weight: 700; color: #000;
@@ -242,9 +252,9 @@ src="https://www.facebook.com/tr?id=1347145910208137&ev=PageView&noscript=1"/></
 
   <!-- 6. Pricing -->
   <div class="pricing">
-    <div class="from">De €97,00</div>
-    <div class="for-only">Pour seulement €0,00</div>
-    <div class="yes-only">OUI ! SEULEMENT €0,00 !</div>
+    <div class="from">De <span class="strike">€97,00</span></div>
+    <div class="for-only">Pour seulement <span class="green">€0,00</span></div>
+    <div class="yes-only">OUI ! SEULEMENT <span class="green">€0,00 !</span></div>
     <div class="moment">C'est votre moment de clarté mentale !</div>
     <div class="instruction">
       Cliquez sur le <span class="green">bouton vert</span> ci-dessus et ajoutez le <strong>Protocole 40 Hz Nocturne</strong> à votre commande
