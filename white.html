@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Recherches en neurologie cognitive sur la mémoire, la Rouille Cérébrale et les ondes gamma — par le Dr. Pierre Fontaine, neurologue à l'Institut Pasteur de Paris.">
+<title>Dr. Pierre Fontaine — Le Code de la Mémoire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f5f1ea;
+    --cream-deep:#ebe5d8;
+    --ink:#1a2332;
+    --ink-soft:#3d4e5c;
+    --ink-faint:#6a7785;
+    --accent:#1f6b6a;
+    --accent-deep:#134645;
+    --accent-pale:#a8c4c3;
+    --gold:#b8902f;
+    --gold-light:#d4b962;
+    --rule:rgba(31,107,106,.18);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream);
+    line-height:1.7;-webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(ellipse at top, rgba(31,107,106,.04), transparent 60%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .26  0 0 0 0 .30  0 0 0 0 .37  0 0 0 .08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:500;color:var(--ink);line-height:1.18;letter-spacing:.005em}
+  img{max-width:100%;height:auto;display:block}
+  a{color:var(--accent);text-decoration:none;transition:color .25s,opacity .25s}
+  a:hover{color:var(--accent-deep)}
+  .container{max-width:1180px;margin:0 auto;padding:0 28px}
+  .container--narrow{max-width:780px;margin:0 auto;padding:0 28px}
+
+  /* Eyebrow */
+  .eyebrow{
+    font-family:'Cinzel',serif;font-size:11px;letter-spacing:3.5px;
+    text-transform:uppercase;color:var(--accent);font-weight:500;
+    display:inline-flex;align-items:center;gap:14px;margin-bottom:18px;
+  }
+  .eyebrow::before,.eyebrow::after{
+    content:"";height:1px;width:28px;background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  }
+  .lede{font-size:19px;color:var(--ink-soft);line-height:1.55;font-family:'Cormorant Garamond',serif;font-style:italic}
+
+  /* Drop cap */
+  .drop::first-letter{
+    font-family:'Cormorant Garamond',serif;font-weight:600;float:left;
+    font-size:5.6em;line-height:.85;padding:8px 14px 0 0;margin-top:6px;
+    color:var(--accent-deep);
+  }
+
+  /* Divider */
+  .divider{display:flex;align-items:center;justify-content:center;padding:60px 0;color:var(--accent);opacity:.55}
+  .divider-line{flex:1;max-width:140px;height:1px;background:linear-gradient(90deg,transparent,var(--accent) 45%,var(--accent) 55%,transparent);margin:0 20px}
+  .divider-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:-12px 0 0 var(--accent),12px 0 0 var(--accent)}
+
+  /* Header */
+  header{
+    background:rgba(245,241,234,.85);backdrop-filter:saturate(180%) blur(12px);
+    -webkit-backdrop-filter:saturate(180%) blur(12px);
+    border-bottom:1px solid var(--rule);position:sticky;top:0;z-index:10;
+    padding:18px 0;
+  }
+  .nav{display:flex;justify-content:space-between;align-items:center;gap:32px}
+  .logo{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--ink);letter-spacing:.3px;display:flex;align-items:baseline;gap:8px}
+  .logo small{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);font-weight:500}
+  nav ul{display:flex;gap:32px;list-style:none}
+  nav a{color:var(--ink-soft);font-family:'Cinzel',serif;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:2.5px}
+  nav a:hover{color:var(--accent);opacity:1}
+
+  /* Hero */
+  .hero{
+    position:relative;min-height:680px;display:flex;align-items:center;
+    background:
+      linear-gradient(180deg,rgba(10,18,28,.35) 0%,rgba(10,18,28,.55) 60%,rgba(10,18,28,.85) 100%),
+      url('/assets/images/pierre-hero-bg.jpg') center/cover no-repeat;
+    color:var(--cream);padding:120px 0 130px;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;left:50%;bottom:-1px;transform:translateX(-50%);
+    width:120%;height:120px;
+    background:radial-gradient(ellipse at 50% 100%,var(--cream) 0%,transparent 60%);pointer-events:none;
+  }
+  .hero .container{position:relative;z-index:2;max-width:920px}
+  .hero .eyebrow{color:var(--gold-light)}
+  .hero .eyebrow::before,.hero .eyebrow::after{background:linear-gradient(90deg,transparent,var(--gold-light),transparent);width:48px}
+  .hero h1{
+    font-size:clamp(46px,7vw,92px);color:var(--cream);
+    font-weight:500;margin:0 0 24px;max-width:880px;
+    text-shadow:0 2px 20px rgba(0,0,0,.45);line-height:1.02;letter-spacing:-.01em;
+  }
+  .hero h1 em{font-style:italic;color:var(--gold-light);font-weight:500}
+  .hero .lede{
+    color:rgba(245,241,234,.92);max-width:640px;
+    font-size:clamp(17px,1.8vw,21px);margin:0 0 38px;
+  }
+  .cta{
+    display:inline-flex;align-items:center;gap:12px;
+    background:transparent;color:var(--cream);
+    font-family:'Cinzel',serif;font-weight:500;
+    padding:16px 36px;font-size:11px;letter-spacing:3px;text-transform:uppercase;
+    border:1px solid var(--gold-light);
+    transition:all .3s;position:relative;overflow:hidden;
+  }
+  .cta::before{
+    content:"";position:absolute;inset:0;background:var(--gold-light);
+    transform:translateX(-101%);transition:transform .35s ease;z-index:-1;
+  }
+  .cta:hover{color:var(--ink);opacity:1}
+  .cta:hover::before{transform:translateX(0)}
+  .cta .arrow{font-family:serif;font-size:18px;letter-spacing:0}
+
+  /* Featured article */
+  .featured{padding:120px 0 100px;background:var(--cream)}
+  .article-meta{
+    display:flex;align-items:center;gap:18px;margin-bottom:24px;
+    font-family:'Cinzel',serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);
+  }
+  .article-meta .dot{width:3px;height:3px;background:var(--gold);border-radius:50%;display:inline-block}
+  .featured h2{font-size:clamp(40px,5.2vw,64px);margin-bottom:24px;font-weight:500;line-height:1.08;max-width:880px}
+  .featured h2 em{font-style:italic;color:var(--accent-deep)}
+  .featured .lede{margin-bottom:36px;font-size:22px;max-width:780px}
+  .featured-img{
+    position:relative;margin:50px 0 36px;
+    border:1px solid var(--rule);padding:14px;background:var(--cream);
+    box-shadow:0 18px 40px rgba(20,40,60,.10);
+  }
+  .featured-img img{width:100%;display:block}
+  .featured-img-caption{
+    text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;
+    color:var(--ink-faint);font-size:15px;margin-top:18px;line-height:1.5;
+  }
+  .body-text p{margin-bottom:20px;font-size:17px;color:var(--ink-soft)}
+  .body-text p em{color:var(--ink);font-style:italic}
+  .body-text blockquote{
+    border-left:3px solid var(--gold);
+    padding:8px 0 8px 28px;margin:32px 0;
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;
+    color:var(--ink);line-height:1.45;
+  }
+  .body-text blockquote cite{
+    display:block;margin-top:14px;font-family:'Cinzel',serif;font-style:normal;
+    font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);
+  }
+
+  /* Articles grid */
+  .articles{padding:100px 0;background:var(--cream-deep);position:relative}
+  .articles-header{text-align:center;margin-bottom:70px}
+  .articles-header h2{font-size:clamp(36px,4.5vw,52px);margin-bottom:18px;font-style:italic;font-weight:500}
+  .articles-header .lede{max-width:620px;margin:0 auto;font-size:18px}
+  .articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:42px}
+  .article-card{
+    background:var(--cream);
+    padding:42px 36px;border:1px solid var(--rule);
+    display:flex;flex-direction:column;
+    transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s;
+    position:relative;
+  }
+  .article-card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg,transparent,var(--accent) 30%,var(--gold) 70%,transparent);opacity:.65;
+  }
+  .article-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(20,40,60,.12)}
+  .article-card .number{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:48px;
+    color:var(--accent);opacity:.45;line-height:1;margin-bottom:18px;
+  }
+  .article-card .cat{
+    font-family:'Cinzel',serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
+    color:var(--gold);margin-bottom:14px;font-weight:500;
+  }
+  .article-card h3{font-size:26px;margin-bottom:14px;font-weight:600;color:var(--ink);line-height:1.2}
+  .article-card p{font-size:15px;color:var(--ink-soft);margin-bottom:24px;flex:1;line-height:1.65}
+  .article-card .read-more{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Cinzel',serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
+    color:var(--accent-deep);font-weight:600;align-self:flex-start;
+    padding-bottom:4px;border-bottom:1px solid var(--accent-pale);transition:border-color .25s;
+  }
+  .article-card .read-more:hover{border-color:var(--accent);opacity:1}
+
+  /* Marie's story */
+  .story{padding:120px 0;background:var(--cream)}
+  .story-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:90px;align-items:center}
+  .story-img{
+    position:relative;border:1px solid var(--rule);padding:14px;background:var(--cream);
+    box-shadow:0 18px 50px rgba(20,40,60,.15);
+  }
+  .story-img::before,.story-img::after{
+    content:"";position:absolute;width:24px;height:24px;border:1px solid var(--gold);
+  }
+  .story-img::before{top:-6px;left:-6px;border-right:0;border-bottom:0}
+  .story-img::after{bottom:-6px;right:-6px;border-left:0;border-top:0}
+  .story-img img{width:100%;aspect-ratio:3/4;object-fit:cover}
+  .story-img-caption{
+    text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;
+    color:var(--ink-faint);font-size:14px;margin-top:18px;
+  }
+  .story h2{font-size:clamp(36px,4.8vw,56px);margin-bottom:22px;font-style:italic;line-height:1.1;font-weight:500}
+  .story .lede{margin-bottom:24px}
+
+  /* Brain observation */
+  .observation{padding:120px 0;background:var(--cream-deep);position:relative}
+  .observation::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(ellipse at 50% 0%,rgba(31,107,106,.06),transparent 50%);
+    pointer-events:none;
+  }
+  .observation-header{text-align:center;margin-bottom:60px;position:relative}
+  .observation-header h2{font-size:clamp(34px,4.5vw,48px);margin-bottom:18px;font-style:italic;font-weight:500}
+  .observation-header .lede{max-width:680px;margin:0 auto;font-size:18px}
+  .brain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:32px;position:relative}
+  .brain-card{
+    background:var(--ink);padding:20px;border:1px solid rgba(31,107,106,.3);
+    transition:transform .3s;position:relative;
+  }
+  .brain-card:hover{transform:translateY(-4px)}
+  .brain-card img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;filter:contrast(1.05)}
+  .brain-card-info{padding:18px 4px 4px}
+  .brain-card .stage{
+    font-family:'Cinzel',serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
+    color:var(--gold-light);margin-bottom:6px;font-weight:500;
+  }
+  .brain-card h4{color:var(--cream);font-size:20px;font-weight:500;font-family:'Cormorant Garamond',serif;font-style:italic}
+
+  /* La méthode */
+  .methode{
+    padding:130px 0;background:var(--ink);color:var(--cream);position:relative;overflow:hidden;
+  }
+  .methode::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(ellipse at 30% 50%,rgba(31,107,106,.18),transparent 55%);pointer-events:none;
+  }
+  .methode-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center;position:relative}
+  .methode-cover{
+    position:relative;border:1px solid rgba(212,185,98,.25);padding:14px;background:rgba(0,0,0,.25);
+    box-shadow:0 30px 80px rgba(0,0,0,.4);max-width:380px;
+  }
+  .methode-cover img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+  .methode .eyebrow{color:var(--gold-light)}
+  .methode .eyebrow::before,.methode .eyebrow::after{background:linear-gradient(90deg,transparent,var(--gold-light),transparent)}
+  .methode h2{color:var(--cream);font-size:clamp(36px,4.8vw,58px);margin-bottom:22px;font-style:italic;font-weight:500}
+  .methode .lede{color:rgba(245,241,234,.82);margin-bottom:26px;font-size:19px;max-width:560px}
+  .methode-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px;padding-top:36px;border-top:1px solid rgba(212,185,98,.2)}
+  .stat .num{font-family:'Cormorant Garamond',serif;font-size:42px;color:var(--gold-light);font-weight:500;display:block;line-height:1.05}
+  .stat .label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(245,241,234,.6);margin-top:4px;display:block}
+
+  /* About */
+  .about{padding:120px 0;background:var(--cream)}
+  .about-header{text-align:center;margin-bottom:50px}
+  .about-header h2{font-size:clamp(36px,4.5vw,52px);font-style:italic;font-weight:500}
+  .about-portrait{
+    width:200px;height:200px;border-radius:50%;
+    margin:0 auto 32px;overflow:hidden;
+    border:1px solid var(--rule);padding:8px;background:var(--cream);
+    box-shadow:0 14px 36px rgba(20,40,60,.18),0 0 0 1px rgba(184,144,47,.25) inset;
+    position:relative;
+  }
+  .about-portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;border-radius:50%;display:block}
+  .about-portrait::after{
+    content:"";position:absolute;inset:-6px;border-radius:50%;
+    border:1px solid rgba(184,144,47,.35);pointer-events:none;
+  }
+  .about-text{max-width:780px;margin:0 auto}
+  .about-text p{margin-bottom:18px;font-size:18px;color:var(--ink-soft);line-height:1.7}
+  .signature{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+    font-size:26px;color:var(--ink);margin-top:32px;text-align:center;
+  }
+  .signature small{display:block;font-family:'Cinzel',serif;font-style:normal;font-size:10px;letter-spacing:2.5px;color:var(--accent);margin-top:6px;font-weight:500}
+
+  /* Newsletter */
+  .newsletter{padding:100px 0;background:var(--cream-deep);text-align:center}
+  .newsletter h2{font-size:clamp(32px,4vw,46px);margin-bottom:16px;font-style:italic;font-weight:500}
+  .newsletter .lede{max-width:540px;margin:0 auto 36px;font-size:18px}
+  .newsletter-form{display:flex;max-width:480px;margin:0 auto;gap:0;border:1px solid var(--rule);background:var(--cream)}
+  .newsletter-form input{
+    flex:1;padding:16px 22px;border:0;background:transparent;font-family:'Inter',sans-serif;
+    font-size:15px;color:var(--ink);outline:0;
+  }
+  .newsletter-form input::placeholder{color:var(--ink-faint);font-style:italic}
+  .newsletter-form button{
+    padding:14px 28px;background:var(--accent);color:var(--cream);border:0;cursor:pointer;
+    font-family:'Cinzel',serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;
+    transition:background .25s;
+  }
+  .newsletter-form button:hover{background:var(--accent-deep)}
+  .newsletter .note{margin-top:16px;font-size:13px;color:var(--ink-faint);font-style:italic}
+
+  /* Footer */
+  footer{background:var(--ink);color:rgba(245,241,234,.7);padding:60px 0 30px;font-size:14px;border-top:1px solid var(--accent-deep)}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px;margin-bottom:42px}
+  .footer-grid h5{
+    color:var(--gold-light);font-family:'Cinzel',serif;font-size:11px;
+    letter-spacing:2.5px;text-transform:uppercase;margin-bottom:18px;font-weight:500;
+  }
+  .footer-grid p{color:rgba(245,241,234,.55);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;line-height:1.6}
+  .footer-grid ul{list-style:none}
+  .footer-grid li{margin-bottom:10px}
+  .footer-grid a{color:rgba(245,241,234,.7);font-size:13px}
+  .footer-grid a:hover{color:var(--gold-light);opacity:1}
+  .footer-bottom{
+    border-top:1px solid rgba(212,185,98,.15);padding-top:24px;text-align:center;
+    font-size:12px;color:rgba(245,241,234,.4);letter-spacing:.5px;
+  }
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* Responsive */
+  @media(max-width:920px){
+    .story-grid,.methode-grid{grid-template-columns:1fr;gap:48px}
+    .methode-cover{max-width:300px;margin:0 auto}
+    .articles-grid,.brain-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+    nav ul{gap:18px}
+    nav a{font-size:9px;letter-spacing:2px}
+    .hero{min-height:560px;padding:90px 0 100px}
+    .featured,.articles,.story,.observation,.methode,.about,.newsletter{padding:80px 0}
+    .methode-stats{grid-template-columns:1fr;gap:16px}
+  }
+  @media(max-width:540px){
+    .container,.container--narrow{padding:0 20px}
+    .logo{font-size:20px}
+    nav ul{flex-wrap:wrap;justify-content:flex-end;gap:12px 14px}
+    .footer-grid{grid-template-columns:1fr}
+    .newsletter-form{flex-direction:column}
+    .newsletter-form button{padding:14px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">Pierre Fontaine <small>· MD</small></div>
+    <nav>
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#articles">Articles</a></li>
+        <li><a href="#methode">La Méthode</a></li>
+        <li><a href="#a-propos">À propos</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="accueil">
+  <div class="container">
+    <div class="eyebrow">Institut Pasteur · Paris</div>
+    <h1>Le Code de <em>la Mémoire</em></h1>
+    <p class="lede">Recherches en neurologie cognitive sur la mémoire, la Rouille Cérébrale et les ondes gamma — par le Dr. Pierre Fontaine, chef de l'Institut Pasteur de Paris et professeur à l'Université de la Sorbonne.</p>
+    <a href="#articles" class="cta">Lire les recherches <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<!-- Featured article: Rouille Cérébrale -->
+<section class="featured">
+  <div class="container--narrow">
+    <div class="reveal">
+      <div class="article-meta">
+        <span>Dossier · Neuroscience</span>
+        <span class="dot"></span>
+        <span>Lecture · 8 minutes</span>
+      </div>
+      <h2>Comprendre la <em>Rouille Cérébrale</em></h2>
+      <p class="lede">Une corrosion silencieuse, étudiée et validée par l'Université d'Oxford, qui décrit comment le cerveau des personnes souffrant de perte de mémoire se dégrade et se rétrécit progressivement — bien avant les premiers signes d'Alzheimer.</p>
+    </div>
+
+    <div class="featured-img reveal">
+      <img src="/assets/images/brain-02.jpg" alt="Imagerie cérébrale par résonance magnétique montrant les couches du cerveau">
+      <p class="featured-img-caption">Imagerie par résonance magnétique du cerveau humain · vues axiales successives · Institut Pasteur, Paris.</p>
+    </div>
+
+    <div class="body-text reveal">
+      <p class="drop">La Rouille Cérébrale agit exactement comme la rouille sur un métal. Elle s'accumule entre les neurones, bloquant le passage des nutriments. Avec le temps, cette corrosion silencieuse affaiblit les connexions cérébrales et conduit à la mort des neurones — provoquant ainsi des maladies de la mémoire, comme Alzheimer.</p>
+
+      <p>Scientifiquement appelée <em>plaques bêta-amyloïdes</em>, cette accumulation de dépôts de protéines se forme entre les neurones au fil des années. Lorsque le blocage se produit, les cellules s'enflamment, empêchant le transport des nutriments d'atteindre les neurones.</p>
+
+      <p>Le résultat : les neurones commencent à mourir de faim et perdent leur capacité à transmettre et traiter les informations les plus simples — comme se souvenir de l'endroit où vous avez laissé vos clés.</p>
+
+      <blockquote>
+        C'est comme si les fils électriques qui alimentent toute une ville se couvraient peu à peu de rouille, cessant de transporter l'énergie jusqu'aux lampadaires. Et cette lumière — vos pensées, vos souvenirs, vos émotions — ne fait plus que vaciller, avant de s'éteindre complètement.
+        <cite>— Louis Alexandre Dubois, neurologue · Université d'Oxford</cite>
+      </blockquote>
+
+      <p>La cause profonde se trouve dans le mode de vie moderne. Une mauvaise alimentation, l'alcool, la pollution, le stress, l'anxiété — tout cela favorise et accélère le processus de perte de mémoire, même chez les personnes sans antécédents familiaux.</p>
+
+      <p>Au moment où ces lignes sont écrites, plus de <em>225 000 nouveaux cas</em> d'Alzheimer sont diagnostiqués chaque année en France, selon le Comité International de la Mémoire. Les estimations pour 2028 annoncent près d'un million de nouveaux cas à travers tout le pays.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true">
+  <span class="divider-line"></span>
+  <span class="divider-dot"></span>
+  <span class="divider-line"></span>
+</div>
+
+<!-- Articles grid -->
+<section class="articles" id="articles">
+  <div class="container">
+    <div class="articles-header reveal">
+      <div class="eyebrow">Articles &amp; Recherches</div>
+      <h2>Trois lectures essentielles</h2>
+      <p class="lede">Pour comprendre comment fonctionne réellement le cerveau humain — et comment la science peut le réactiver.</p>
+    </div>
+
+    <div class="articles-grid">
+
+      <article class="article-card reveal">
+        <span class="number">I.</span>
+        <div class="cat">Neurosciences</div>
+        <h3>Les ondes gamma 40 Hz et le cerveau</h3>
+        <p>Lorsque le cerveau veut accéder à une mémoire stockée dans l'hippocampe, il entre naturellement dans un état de fréquence de 40 Hz. Mais chez les personnes atteintes d'Alzheimer, cet état mental a disparu. Voici comment il peut être restauré.</p>
+        <a href="#methode" class="read-more">Lire l'article <span>→</span></a>
+      </article>
+
+      <article class="article-card reveal">
+        <span class="number">II.</span>
+        <div class="cat">Biologie cellulaire</div>
+        <h3>Les microglies : les ouvrières naturelles du cerveau</h3>
+        <p>Les Cellules Ouvrières du cerveau — les microglies — sont les cellules de défense naturelles capables de nettoyer les enchevêtrements de Rouille Cérébrale, de réduire l'inflammation et d'oxygéner les neurones.</p>
+        <a href="#methode" class="read-more">Lire l'article <span>→</span></a>
+      </article>
+
+      <article class="article-card reveal">
+        <span class="number">III.</span>
+        <div class="cat">Auto-évaluation</div>
+        <h3>Trois questions sur votre mémoire</h3>
+        <p>L'association France Alzheimer &amp; Maladies Apparentées propose un test simple en trois questions pour savoir si la Rouille Cérébrale est déjà dans un état de détérioration chronique. Répondez honnêtement.</p>
+        <a href="#methode" class="read-more">Lire l'article <span>→</span></a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Marie's Story -->
+<section class="story">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-img reveal">
+        <img src="/assets/images/marie.jpg" alt="Madame Marie Lefèvre Fontaine, mère du Dr. Pierre Fontaine" loading="lazy">
+        <p class="story-img-caption">— Madame Marie Lefèvre Fontaine —</p>
+      </div>
+      <div class="text reveal">
+        <div class="eyebrow">Témoignage personnel</div>
+        <h2>L'histoire qui a tout changé</h2>
+        <p class="lede">« Au début, ce n'étaient que de petites choses. Elle oubliait le feu allumé, brûlait les repas et riait en disant que cette odeur, c'était celle du café en train de couler. »</p>
+        <div class="body-text">
+          <p>Un jour, j'ai retrouvé la télécommande du téléviseur dans le réfrigérateur. Le lendemain, les clés dans le panier à pain. Et ainsi, les signes ont commencé à apparaître, l'un après l'autre.</p>
+          <p>J'ai passé des années à voir cela chez mes patients, sans jamais imaginer qu'un jour cela se produirait dans ma propre maison. L'histoire de Madame Marie Lefèvre Fontaine — ma mère — est celle qui m'a poussé à chercher, sans relâche, une réponse que la médecine moderne n'avait pas encore trouvée.</p>
+          <p>Cette quête m'a mené, après des mois enfermé dans mon bureau, à découvrir un mécanisme jusque-là peu exploré — et à donner enfin un nom à l'espoir.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Brain observation -->
+<section class="observation">
+  <div class="container">
+    <div class="observation-header reveal">
+      <div class="eyebrow">Observation clinique</div>
+      <h2>L'évolution observée sur le cerveau</h2>
+      <p class="lede">Examens cérébraux comparatifs de Madame Marie Lefèvre Fontaine, réalisés à l'Hôpital Pitié-Salpêtrière de Paris, sur une période de trois mois.</p>
+    </div>
+
+    <div class="brain-grid">
+      <div class="brain-card reveal">
+        <img src="/assets/images/brain-01.jpg" alt="Cerveau avant traitement">
+        <div class="brain-card-info">
+          <div class="stage">Étape 1 · Avant</div>
+          <h4>Activité cérébrale réduite</h4>
+        </div>
+      </div>
+      <div class="brain-card reveal">
+        <img src="/assets/images/brain-02.jpg" alt="Cerveau après 2 semaines">
+        <div class="brain-card-info">
+          <div class="stage">Étape 2 · Après 2 semaines</div>
+          <h4>Connexions en restauration</h4>
+        </div>
+      </div>
+      <div class="brain-card reveal">
+        <img src="/assets/images/brain-03.jpg" alt="Cerveau aujourd'hui">
+        <div class="brain-card-info">
+          <div class="stage">Étape 3 · Aujourd'hui</div>
+          <h4>Cerveau pleinement actif</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- La Méthode -->
+<section class="methode" id="methode">
+  <div class="container">
+    <div class="methode-grid">
+      <div class="methode-cover reveal">
+        <img src="/assets/images/freq-40hz.jpg" alt="Onde gamma 40 Hz — Énergie, Vitalité et Réactivation Cérébrale">
+      </div>
+      <div class="text reveal">
+        <div class="eyebrow">Le Code de la Mémoire</div>
+        <h2>Une méthode 100 % naturelle</h2>
+        <p class="lede">Une thérapie d'exposition aux fréquences sonores gamma de 40 Hz — lauréate du Prix d'Innovation en Santé Cérébrale 2024 — qui réactive naturellement les cellules de défense du cerveau.</p>
+        <p style="color:rgba(245,241,234,.75);font-size:16px;margin-bottom:8px">Au cours d'une étude reproduite par l'Institut du Cerveau et l'Hôpital Pitié-Salpêtrière de Paris sur 354 patients atteints d'Alzheimer avancé, les résultats ont montré un gain notable de masse cérébrale et une augmentation de la production de nouveaux neurones après l'exposition aux ondes gamma 40 Hz.</p>
+
+        <div class="methode-stats">
+          <div class="stat">
+            <span class="num">88 %</span>
+            <span class="label">Patients · résultats positifs</span>
+          </div>
+          <div class="stat">
+            <span class="num">354</span>
+            <span class="label">Patients · étude clinique</span>
+          </div>
+          <div class="stat">
+            <span class="num">35 k</span>
+            <span class="label">Personnes accompagnées</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true">
+  <span class="divider-line"></span>
+  <span class="divider-dot"></span>
+  <span class="divider-line"></span>
+</div>
+
+<!-- À propos -->
+<section class="about" id="a-propos">
+  <div class="container--narrow">
+    <div class="about-header reveal">
+      <div class="eyebrow">À propos</div>
+      <div class="about-portrait">
+        <img src="/assets/images/pierre-hero.jpg" alt="Dr. Pierre Fontaine, neurologue à l'Institut Pasteur de Paris" loading="lazy">
+      </div>
+      <h2>Dr. Pierre Fontaine</h2>
+    </div>
+    <div class="about-text reveal">
+      <p>Je m'appelle Pierre Fontaine. Je suis médecin neurologue, chef de l'Institut Pasteur de Paris et professeur à l'Université de la Sorbonne depuis plus de quinze ans. Ma spécialité est la neurologie cognitive — autrement dit, la science de la mémoire.</p>
+      <p>Vous m'avez peut-être déjà vu dans des émissions de télévision, entendu dans des podcasts, ou lu l'un de mes best-sellers — comme <em>Mémoire d'Acier</em>, qui a dépassé les trois millions d'exemplaires vendus rien que cette année.</p>
+      <p>Au cours des vingt dernières années, j'ai accompagné plus de <em>35 000 personnes</em> âgées de 60, 70, 80 et même 97 ans à retrouver un cerveau plus actif et plus affûté — capable de mémoriser et de se souvenir des choses mieux que bien des esprits jeunes d'aujourd'hui.</p>
+      <p>Mais c'est l'histoire de ma mère qui m'a appris ce que la perte de mémoire signifie vraiment. Et c'est elle qui m'a poussé à chercher, sans relâche, ce que la médecine moderne n'avait pas encore trouvé.</p>
+      <div class="signature">
+        — Pierre Fontaine
+        <small>Neurologue · Institut Pasteur de Paris</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter">
+  <div class="container--narrow">
+    <div class="reveal">
+      <div class="eyebrow">Restez informé</div>
+      <h2>Recherches &amp; lectures</h2>
+      <p class="lede">Recevez chaque mois mes derniers articles et observations cliniques sur la mémoire, le sommeil et la santé cérébrale.</p>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Merci'; this.querySelector('input').value='';">
+        <input type="email" placeholder="votre adresse email" required>
+        <button type="submit">S'inscrire</button>
+      </form>
+      <p class="note">Pas de spam. Désinscription à tout moment.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h5>Pierre Fontaine</h5>
+        <p>Recherches en neurologie cognitive sur la mémoire et la santé cérébrale. Institut Pasteur de Paris.</p>
+      </div>
+      <div>
+        <h5>Explorer</h5>
+        <ul>
+          <li><a href="#articles">Articles</a></li>
+          <li><a href="#methode">La Méthode</a></li>
+          <li><a href="#a-propos">À propos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Recherches</h5>
+        <ul>
+          <li><a href="#">Rouille Cérébrale</a></li>
+          <li><a href="#">Ondes gamma 40 Hz</a></li>
+          <li><a href="#">Microglies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="#">contact@pierrefountainer.online</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <span id="year"></span> Dr. Pierre Fontaine · Tous droits réservés · Les contenus de ce site sont à but informatif et ne remplacent pas une consultation médicale.
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
