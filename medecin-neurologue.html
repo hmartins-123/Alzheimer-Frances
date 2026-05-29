@@ -31,10 +31,20 @@ html, body { background: #ffffff; color: #1a1a1a; font-family: -apple-system, Bl
   position: sticky; top: 0; z-index: 100;
   background: #ffffff;
   border-bottom: 1px solid #e8e8e8;
-  padding: 14px 20px;
-  display: flex; align-items: center; justify-content: center;
+  padding: 12px 16px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px;
 }
-.header img { height: 44px; width: auto; display: block; }
+.header .logo { height: 44px; width: auto; display: block; margin: 0 auto; }
+.header .icon {
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  background: #f3f3f3;
+  border-radius: 6px;
+  flex-shrink: 0;
+  color: #1a1a1a;
+}
+.header .icon svg { width: 18px; height: 18px; display: block; }
 
 main { max-width: 760px; margin: 0 auto; padding: 28px 16px 60px; }
 
@@ -52,7 +62,10 @@ main { max-width: 760px; margin: 0 auto; padding: 28px 16px 60px; }
 }
 
 @media (max-width: 640px) {
-  .header img { height: 36px; }
+  .header { padding: 10px 12px; }
+  .header .logo { height: 36px; }
+  .header .icon { width: 36px; height: 36px; }
+  .header .icon svg { width: 16px; height: 16px; }
   main { padding: 20px 12px 40px; }
   .expert { max-width: 280px; }
 }
@@ -61,7 +74,20 @@ main { max-width: 760px; margin: 0 auto; padding: 28px 16px 60px; }
 <body>
 
 <header class="header">
-  <img src="assets/images/institut-pasteur.webp" alt="Institut Pasteur" />
+  <span class="icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="7"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+  </span>
+  <img class="logo" src="assets/images/institut-pasteur.webp" alt="Institut Pasteur" />
+  <span class="icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </span>
 </header>
 
 <main>
