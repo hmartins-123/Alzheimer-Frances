@@ -7,7 +7,8 @@
 <title>Le Détail Que 99% Des Patients Ignorent — Dr. Pierre Fontaine</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -20,113 +21,217 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '1347145910208137');
 fbq('track', 'PageView');
 </script>
+<!-- End Meta Pixel Code -->
+<!-- UTMify -->
 <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { background: #000; font-family: 'Roboto', Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-.page { max-width: 700px; margin: 0 auto; background: #000; }
+html, body { background: #ffffff; color: #1a2332; font-family: 'Inter', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
 
-.intro {
-  background: #fff;
-  color: #1a1a1a;
-  font-size: 20px;
-  font-weight: 600;
-  padding: 22px 22px 18px;
-  text-align: center;
-  line-height: 1.35;
-  font-style: italic;
+:root {
+  --ink: #1a2332;
+  --ink-soft: #3d4e5c;
+  --ink-faint: #6a7785;
+  --gold: #b8902f;
+  --gold-light: #d4b962;
+  --accent: #1f6b6a;
 }
 
-.vault-title {
-  padding: 22px 16px 18px;
+.page {
+  max-width: 760px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.header {
+  text-align: center;
+  padding: 28px 16px 22px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--ink);
+  border-bottom: 1px solid var(--gold);
+}
+
+.intro {
+  background: #fafaf7;
+  padding: 22px 24px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 17px;
+  color: var(--ink-soft);
+  letter-spacing: 0.2px;
+}
+
+.editorial {
+  padding: 48px 28px 36px;
+  text-align: center;
+  background: #ffffff;
+}
+
+.eyebrow {
+  font-family: 'Cinzel', serif;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.headline-main {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 52px;
+  color: var(--ink);
+  line-height: 1.1;
+  margin-bottom: 0;
+}
+
+.headline-main .part1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--ink);
+}
+
+.headline-main .part-accent {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--accent);
+}
+
+.ornament {
+  padding: 28px 0 22px;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 14px;
 }
 
-.vault-title-box {
-  border: 12px double #FFA918;
-  padding: 18px 22px;
-  text-align: center;
-  color: #FFA918;
-  font-size: 28px;
-  font-weight: 700;
+.ornament .line {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  display: block;
+}
+
+.ornament .diamond {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.subline {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
   font-style: italic;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-shadow: 0 0 14px rgba(255,169,24,0.55);
-  line-height: 1.15;
+  font-size: 21px;
+  color: var(--ink-faint);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.45;
 }
 
 .vsl-section {
-  background: #000;
-  padding: 20px 16px 28px;
+  background: #ffffff;
+  padding: 28px 18px 36px;
   text-align: center;
 }
 
 .oculta {
   display: none;
-  transition: all 0.3s ease-in-out;
 }
 
-.funnel-wrapper { background: #fff; padding: 0; }
-.cover-box-text p { font-size: 18px; color: black; font-weight: bold; margin: 0 0 5px 0; }
-.cover-box-text h2 { font-size: 26px; }
-.cover-box-bottom { height: 220px; padding: 10px; }
-.cover-box-bottom img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.cta-caption {
+  text-align: center;
+  padding: 18px 24px 8px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--ink-soft);
+}
 
-.pricing { background: #fff; padding: 30px 18px 22px; text-align: center; }
-.pricing .from { font-size: 34px; font-weight: 700; color: #000; margin-bottom: 8px; }
-.pricing .from .strike { color: #F81111; text-decoration: line-through; text-decoration-color: #F81111; text-decoration-thickness: 3px; }
-.pricing .for-only { font-size: 34px; font-weight: 700; color: #000; margin-bottom: 18px; }
-.pricing .for-only .green { color: #0B8E00; }
-.pricing .yes-only { font-size: 54px; font-weight: 700; color: #000; line-height: 1.05; margin-bottom: 18px; }
-.pricing .yes-only .green { color: #0B8E00; }
-.pricing .moment { font-size: 27px; font-weight: 700; color: #000; margin-bottom: 16px; line-height: 1.25; }
-.pricing .instruction { font-size: 22px; color: #000; line-height: 1.4; }
-.pricing .instruction .green { color: #0B8E00; font-weight: 700; }
+.funnel-wrapper {
+  background: #ffffff;
+  padding: 0 16px 24px;
+}
 
-.logo-final {
-  background: #fff;
-  padding: 22px 18px 34px;
+.footer {
+  background: #ffffff;
+  padding: 30px 24px 36px;
   text-align: center;
 }
-.logo-final img {
-  width: 70%;
-  max-width: 330px;
-  height: auto;
-  display: block;
+
+.footer-inner {
+  border-top: 1px solid var(--gold-light);
+  max-width: 480px;
   margin: 0 auto;
+  padding-top: 24px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--ink-faint);
 }
 
 @media (max-width: 768px) {
-  .intro { font-size: 17px; padding: 18px 16px 14px; }
-  .vault-title-box { border: 10px double #FFA918; padding: 14px 16px; font-size: 22px; }
-  .vsl-section { padding: 16px 12px 22px; }
-  .cover-box-text p { font-size: 16px !important; margin-bottom: 5px !important; }
-  .cover-box-text h2 { font-size: 22px !important; line-height: 1.1 !important; }
-  .cover-box-top { height: 170px !important; justify-content: flex-start !important; padding-top: 20px !important; }
-  .cover-box-bottom { height: 210px !important; padding: 0 !important; bottom: 0 !important; display: flex !important; justify-content: center !important; align-items: flex-end !important; overflow: visible !important; }
-  .cover-box-bottom img { width: 120% !important; max-width: none !important; height: auto !important; max-height: 100% !important; object-fit: contain !important; margin-bottom: -10px; }
-  .pricing .from { font-size: 28px; }
-  .pricing .for-only { font-size: 28px; }
-  .pricing .yes-only { font-size: 40px; }
-  .pricing .moment { font-size: 22px; }
-  .pricing .instruction { font-size: 18px; }
+  .headline-main {
+    font-size: 38px;
+  }
+  .subline {
+    font-size: 18px;
+  }
+  .editorial {
+    padding: 38px 22px 30px;
+  }
+  .intro {
+    padding: 18px 18px;
+  }
+  .header {
+    padding: 22px 14px 18px;
+  }
+  .vsl-section {
+    padding: 22px 12px 30px;
+  }
 }
 </style>
 </head>
 <body>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1347145910208137&ev=PageView&noscript=1"/></noscript>
-<div class="page">
-  <div class="intro">Une dernière chose, et c'est important.</div>
 
-  <div class="vault-title">
-    <div class="vault-title-box">Le Détail Que 99% Des Patients Ignorent</div>
+<div class="page">
+
+  <div class="header">
+    Pierre Fontaine · MD
+  </div>
+
+  <div class="intro">
+    Une dernière chose, et c'est important.
+  </div>
+
+  <div class="editorial">
+    <div class="eyebrow">Institut Pasteur · Paris</div>
+    <h1 class="headline-main">
+      <span class="part1">Le détail que</span> <span class="part-accent">99% des patients</span> <span class="part1">ignorent</span>
+    </h1>
+    <div class="ornament">
+      <span class="line"></span>
+      <span class="diamond">&#9670;</span>
+      <span class="line"></span>
+    </div>
+    <p class="subline">Un avertissement bref du Dr. Pierre Fontaine avant que vous finalisiez votre commande.</p>
   </div>
 
   <div class="vsl-section">
-    <vturb-smartplayer id="vid-691a14d7381d9df3ecdcf71c" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>
+    <vturb-smartplayer id="vid-691a14d7381d9df3ecdcf71c" style="display: block; margin: 0 auto; width: 100%; max-width: 480px;"></vturb-smartplayer>
     <script type="text/javascript">
       var s=document.createElement("script");
       s.src="https://scripts.converteai.net/1931009e-87e8-44a9-862f-c0f557162b5e/players/691a14d7381d9df3ecdcf71c/v4/player.js",
@@ -135,10 +240,18 @@ html, body { background: #000; font-family: 'Roboto', Arial, sans-serif; -webkit
   </div>
 
   <div class="oculta">
+    <div class="cta-caption">Si vous êtes prêt à aller au bout —</div>
     <div class="funnel-wrapper">
       <div id="hotmart-sales-funnel"></div>
     </div>
   </div>
+
+  <div class="footer">
+    <div class="footer-inner">
+      Dr. Pierre Fontaine · Institut Pasteur — Paris
+    </div>
+  </div>
+
 </div>
 
 <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js" defer></script>
@@ -149,7 +262,6 @@ html, body { background: #000; font-family: 'Roboto', Arial, sans-serif; -webkit
     }
   });
 </script>
-
 <script>
   const minutos = 6;
   const segundos = 0;
@@ -159,6 +271,5 @@ html, body { background: #000; font-family: 'Roboto', Arial, sans-serif; -webkit
     if (el) el.style.display = 'block';
   }, tempoTotal);
 </script>
-
 </body>
 </html>
