@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>Le Protocole Oublié du Corps — Dr. Pierre Fontaine</title>
+<title>Bonus Exclusif — Protocole de Restauration Corporelle</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,68 +30,177 @@ fbq('track', 'PageView');
 
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { background: #000; font-family: 'Roboto', Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+html, body {
+  background: #ffffff;
+  font-family: 'Roboto', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #1a1a1a;
+}
 
-.page { max-width: 700px; margin: 0 auto; background: #000; }
+.page { max-width: 700px; margin: 0 auto; background: #ffffff; }
 
-/* 1. Banner Attention */
-.banner-attention {
-  background: linear-gradient(180deg, #F81111 0%, #8a0808 60%, #000 100%);
-  color: #fff;
+/* 1. Header band */
+.access-band {
+  background: #1f6b6a;
+  color: #ffffff;
   text-align: center;
-  font-size: 27px;
+  padding: 14px 16px;
+  font-size: 19px;
   font-weight: 700;
-  padding: 18px 14px;
-  line-height: 1.25;
-}
-
-/* 2. Congrats */
-.congrats {
-  background: #000;
-  color: #FFA918;
-  text-align: center;
-  font-size: 23px;
-  font-weight: 600;
-  padding: 22px 18px 14px;
-  line-height: 1.35;
-}
-
-/* 3. Vault Title */
-.vault-title {
-  background: #000;
-  padding: 22px 16px 18px;
-  display: flex; justify-content: center;
-}
-.vault-title-box {
-  border: 12px double #FFA918;
-  padding: 18px 22px;
-  text-align: center;
-  color: #FFA918;
-  font-size: 28px;
-  font-weight: 700;
+  line-height: 1.3;
   font-style: italic;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-shadow: 0 0 14px rgba(255,169,24,0.55);
-  line-height: 1.15;
 }
 
-/* 4. Vault Image */
-.vault-image {
-  background: #000;
-  padding: 0;
+/* 2. Bonus headline */
+.bonus-headline {
   text-align: center;
+  padding: 30px 24px 18px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.3;
 }
-.vault-image img {
+.bonus-headline .underline-red {
+  text-decoration: underline;
+  text-decoration-color: #d12626;
+  text-decoration-thickness: 2px;
+}
+.bonus-headline .green {
+  color: #0B8E00;
+}
+
+/* 3. Description top */
+.desc-top {
+  text-align: center;
+  padding: 0 26px 28px;
+  font-size: 18px;
+  color: #2a2a2a;
+  line-height: 1.55;
+}
+.desc-top .underline-blue {
+  font-weight: 700;
+  color: #1a1a1a;
+  text-decoration: underline;
+  text-decoration-color: #1f6b6a;
+  text-decoration-thickness: 2px;
+}
+.desc-top .red {
+  color: #d12626;
+  font-weight: 700;
+}
+.desc-top .bold-black {
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+/* 4. Hero image */
+.hero {
+  padding: 0;
+}
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 5. Important block */
+.important {
+  text-align: center;
+  padding: 28px 24px 4px;
+}
+.important .title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+.important .offer-line {
+  font-size: 21px;
+  font-weight: 700;
+  color: #d12626;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+}
+
+.desc-middle {
+  text-align: center;
+  padding: 0 26px 26px;
+  font-size: 18px;
+  color: #2a2a2a;
+  line-height: 1.55;
+}
+.desc-middle .underline-blue {
+  font-weight: 700;
+  color: #1a1a1a;
+  text-decoration: underline;
+  text-decoration-color: #1f6b6a;
+  text-decoration-thickness: 2px;
+}
+
+.divider {
+  border: 0;
+  border-top: 1.5px solid #1a1a1a;
+  width: 80%;
+  margin: 6px auto 28px;
+}
+
+/* 6. Click + mockup */
+.cta-tease {
+  text-align: center;
+  padding: 0 22px 14px;
+  font-size: 22px;
+  font-weight: 900;
+  color: #0B8E00;
+  text-transform: uppercase;
+  line-height: 1.2;
+  letter-spacing: 0.3px;
+}
+.mockup {
+  padding: 6px 18px 24px;
+  text-align: center;
+  position: relative;
+}
+.mockup-glow {
+  display: inline-block;
+  background: radial-gradient(ellipse at center, rgba(255,200,80,0.45) 0%, rgba(255,255,255,0) 65%);
+  padding: 18px 28px;
+}
+.mockup img {
+  max-width: 280px;
   width: 100%;
   height: auto;
   display: block;
-  margin: 0;
+  margin: 0 auto;
 }
 
-/* 5. Hotmart Sales Funnel */
-.funnel-wrapper { background: #fff; padding: 0; }
+/* 7. Pricing */
+.pricing {
+  text-align: center;
+  padding: 4px 22px 30px;
+}
+.pricing .all-of {
+  font-size: 28px;
+  font-weight: 700;
+  color: #d12626;
+  margin-bottom: 6px;
+}
+.pricing .all-of .strike {
+  color: #1a1a1a;
+  text-decoration: line-through;
+  text-decoration-color: #1a1a1a;
+  text-decoration-thickness: 2.5px;
+}
+.pricing .for-only {
+  font-size: 40px;
+  font-weight: 700;
+  color: #0B8E00;
+  font-style: italic;
+  line-height: 1.05;
+}
 
+/* 8. Hotmart sales funnel */
+.funnel-wrapper { background: #ffffff; padding: 0; }
 .cover-box-text p {
   font-size: 18px;
   color: black;
@@ -102,63 +211,80 @@ html, body { background: #000; font-family: 'Roboto', Arial, sans-serif; -webkit
 .cover-box-bottom { height: 220px; padding: 10px; }
 .cover-box-bottom img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-/* 6. Pricing */
-.pricing { background: #fff; padding: 30px 18px 22px; text-align: center; }
-.pricing .from {
-  font-size: 34px; font-weight: 700; color: #000;
-  margin-bottom: 8px;
+/* 9. Closing block */
+.closing {
+  text-align: center;
+  padding: 18px 22px 14px;
 }
-.pricing .from .strike {
-  color: #F81111;
-  text-decoration: line-through;
-  text-decoration-color: #F81111;
-  text-decoration-thickness: 3px;
+.closing .now {
+  font-size: 22px;
+  font-weight: 700;
+  color: #d12626;
+  text-transform: uppercase;
+  line-height: 1.25;
+  margin-bottom: 14px;
 }
-.pricing .for-only {
-  font-size: 34px; font-weight: 700; color: #000;
+.closing .attention {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  font-style: italic;
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+}
+.closing .warn-text {
+  font-size: 18px;
+  color: #1a1a1a;
+  line-height: 1.5;
+  margin-bottom: 22px;
+  padding: 0 4px;
+}
+.closing .warn-text .never {
+  color: #d12626;
+  font-weight: 700;
+}
+.closing .do-not-ignore {
+  font-size: 19px;
+  font-weight: 700;
+  color: #d12626;
+  text-transform: uppercase;
   margin-bottom: 18px;
+  letter-spacing: 0.3px;
+  line-height: 1.3;
 }
-.pricing .for-only .green {
+.closing .final-instruction {
+  font-size: 18px;
+  color: #1a1a1a;
+  line-height: 1.55;
+  padding: 0 6px 24px;
+}
+.closing .final-instruction .green-bold {
   color: #0B8E00;
+  font-weight: 700;
 }
-.pricing .yes-only {
-  font-size: 54px; font-weight: 700; color: #000;
-  line-height: 1.05; margin-bottom: 18px;
-}
-.pricing .yes-only .green {
-  color: #0B8E00;
-}
-.pricing .moment {
-  font-size: 27px; font-weight: 700; color: #000;
-  margin-bottom: 16px; line-height: 1.25;
-}
-.pricing .instruction {
-  font-size: 22px; color: #000; line-height: 1.4;
-}
-.pricing .instruction .green {
-  color: #0B8E00; font-weight: 700;
-}
-
-/* 7. Logo */
-.logo-final { background: #fff; padding: 22px 18px 34px; text-align: center; }
-.logo-final img {
-  width: 70%; max-width: 330px;
-  height: auto; display: block; margin: 0 auto;
+.closing .final-instruction .bold-black {
+  color: #1a1a1a;
+  font-weight: 700;
 }
 
 /* Mobile */
 @media (max-width: 768px) {
-  .banner-attention { font-size: 21px; padding: 14px 12px; }
-  .congrats { font-size: 19px; padding: 18px 14px 12px; }
-  .vault-title-box {
-    font-size: 22px; padding: 14px 16px; border-width: 10px;
-  }
-  .vault-image { padding: 0; }
-  .pricing .from { font-size: 28px; }
-  .pricing .for-only { font-size: 28px; }
-  .pricing .yes-only { font-size: 40px; }
-  .pricing .moment { font-size: 22px; }
-  .pricing .instruction { font-size: 18px; }
+  .access-band { font-size: 16px; padding: 12px 14px; }
+  .bonus-headline { font-size: 20px; padding: 24px 18px 14px; }
+  .desc-top { font-size: 16px; padding: 0 20px 24px; }
+  .important { padding: 22px 18px 4px; }
+  .important .title { font-size: 22px; }
+  .important .offer-line { font-size: 18px; }
+  .desc-middle { font-size: 16px; padding: 0 20px 22px; }
+  .cta-tease { font-size: 18px; padding: 0 18px 12px; }
+  .mockup img { max-width: 220px; }
+  .pricing .all-of { font-size: 22px; }
+  .pricing .for-only { font-size: 32px; }
+  .closing .now { font-size: 18px; }
+  .closing .attention { font-size: 26px; }
+  .closing .warn-text { font-size: 16px; }
+  .closing .do-not-ignore { font-size: 16px; }
+  .closing .final-instruction { font-size: 16px; }
 
   .cover-box-text p { font-size: 16px !important; margin-bottom: 5px !important; }
   .cover-box-text h2 { font-size: 22px !important; line-height: 1.1 !important; }
@@ -194,29 +320,56 @@ src="https://www.facebook.com/tr?id=1347145910208137&ev=PageView&noscript=1"/></
 
 <div class="page">
 
-  <!-- 1. Banner Attention -->
-  <div class="banner-attention">
-    ⚠️ ATTENTION : NE FERMEZ PAS CETTE PAGE ! ⚠️
+  <!-- 1. Access band -->
+  <div class="access-band">
+    🧬 ACCÈS APPROUVÉ ✅ (PATIENTS DU DR. FONTAINE)
   </div>
 
-  <!-- 2. Congrats -->
-  <div class="congrats">
-    🚨 Vous avez accès à un Cadeau Surprise réservé exclusivement aux patients du Dr. Pierre Fontaine, alors félicitations !&nbsp;🚨
+  <!-- 2. Bonus headline -->
+  <div class="bonus-headline">
+    Vous avez débloqué un <span class="underline-red">BONUS EXCLUSIF</span> parce que vous êtes arrivé jusqu'ici, <span class="green">félicitations&nbsp;!</span>
   </div>
 
-  <!-- 3. Vault Title -->
-  <div class="vault-title">
-    <div class="vault-title-box">
-      Le Protocole Oublié du Corps
-    </div>
+  <!-- 3. Description top -->
+  <div class="desc-top">
+    Découvrez les <span class="underline-blue">3 fréquences cliniques</span> du <span class="bold-black">Protocole de Restauration Corporelle</span>, conçues pour neutraliser la <span class="underline-blue">douleur chronique</span>, les <span class="underline-blue">acouphènes</span> et la <span class="red">fatigue cellulaire</span> qui sabotent votre corps après 60 ans.
   </div>
 
-  <!-- 4. Vault Image -->
-  <div class="vault-image">
+  <!-- 4. Hero image -->
+  <div class="hero">
     <img src="assets/images/up03-hero.webp" alt="Le Protocole de Restauration Corporelle">
   </div>
 
-  <!-- 5. Hotmart Sales Funnel -->
+  <!-- 5. Important block -->
+  <div class="important">
+    <div class="title">⚠️ IMPORTANT ⚠️</div>
+    <div class="offer-line">OFFRE SPÉCIALE VALABLE AUJOURD'HUI&nbsp;!</div>
+  </div>
+
+  <div class="desc-middle">
+    Si vous souhaitez restaurer non seulement votre <span class="underline-blue">esprit</span> mais aussi votre <span class="underline-blue">corps</span> — moins de <span class="underline-blue">douleurs</span>, plus d'<span class="underline-blue">énergie</span>, silence des <span class="underline-blue">acouphènes</span> — voici votre clé&nbsp;:
+  </div>
+
+  <hr class="divider">
+
+  <!-- 6. CTA tease + mockup -->
+  <div class="cta-tease">
+    CLIQUEZ SUR LE BOUTON CI-DESSOUS<br>POUR RÉCLAMER VOTRE BONUS GRATUIT
+  </div>
+
+  <div class="mockup">
+    <span class="mockup-glow">
+      <img src="assets/images/triplo-books.webp" alt="Protocole de Restauration Corporelle">
+    </span>
+  </div>
+
+  <!-- 7. Pricing -->
+  <div class="pricing">
+    <div class="all-of">Tout cela pour <span class="strike">€247</span></div>
+    <div class="for-only">Pour seulement €0,00&nbsp;!</div>
+  </div>
+
+  <!-- 8. Hotmart Sales Funnel -->
   <div class="funnel-wrapper">
     <div id="hotmart-sales-funnel-container" style="position: relative; overflow: hidden; font-family: Arial, sans-serif;">
 
@@ -232,7 +385,7 @@ src="https://www.facebook.com/tr?id=1347145910208137&ev=PageView&noscript=1"/></
           <p>⚠️ Valable uniquement aujourd'hui ⚠️</p>
           <h2 style="margin: 0; color: #56a512; font-weight: 900; line-height: 1.1; text-transform: uppercase;">
             CLIQUEZ SUR LE BOUTON CI-DESSOUS<br>
-            ET RÉCLAMEZ VOTRE CADEAU GRATUIT !
+            ET RÉCLAMEZ VOTRE BONUS GRATUIT !
           </h2>
         </div>
       </div>
@@ -242,26 +395,29 @@ src="https://www.facebook.com/tr?id=1347145910208137&ev=PageView&noscript=1"/></
           background: white; z-index: 9999; pointer-events: auto;
           display: flex; justify-content: center; box-sizing: border-box;
       ">
-        <img src="assets/images/triplo-books.webp" alt="Cadeau Surprise">
+        <img src="assets/images/triplo-books.webp" alt="Protocole Corporel">
       </div>
 
     </div>
   </div>
 
-  <!-- 6. Pricing -->
-  <div class="pricing">
-    <div class="from">De <span class="strike">€247,00</span></div>
-    <div class="for-only">Pour seulement <span class="green">€47,00</span></div>
-    <div class="yes-only">OUI ! SEULEMENT <span class="green">€47,00 !</span></div>
-    <div class="moment">C'est votre moment de restauration totale !</div>
-    <div class="instruction">
-      Cliquez sur le <span class="green">bouton vert</span> ci-dessus et ajoutez votre <strong>Protocole Corporel</strong> à votre commande
+  <!-- 9. Closing block -->
+  <div class="closing">
+    <div class="now">
+      ⚠️ CETTE OPPORTUNITÉ N'EST DISPONIBLE QUE MAINTENANT ⚠️
     </div>
-  </div>
-
-  <!-- 7. Logo -->
-  <div class="logo-final">
-    <img src="assets/images/institut-pasteur.webp" alt="Institut Pasteur">
+    <div class="attention">
+      🚨 ATTENTION 🚨
+    </div>
+    <div class="warn-text">
+      Quand vous quitterez cette page, votre accès disparaîtra et vous ne pourrez <span class="never">JAMAIS</span> récupérer ce bonus gratuitement.
+    </div>
+    <div class="do-not-ignore">
+      🔴 N'IGNOREZ PAS CETTE OPPORTUNITÉ UNIQUE 🔴
+    </div>
+    <div class="final-instruction">
+      Cliquez sur le <span class="green-bold">bouton vert</span> ci-dessus et ajoutez, totalement gratuit, le <span class="bold-black">Protocole de Restauration Corporelle</span> à votre commande dès maintenant.
+    </div>
   </div>
 
 </div>
