@@ -146,6 +146,12 @@ html, body { background: #000; font-family: 'Roboto', Arial, sans-serif; -webkit
   height: auto; display: block; margin: 0 auto;
 }
 
+/* Desktop only: hide pricing + final logo */
+@media (min-width: 769px) {
+  .pricing { display: none; }
+  .logo-final { display: none; }
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   .banner-attention { font-size: 21px; padding: 14px 12px; }
