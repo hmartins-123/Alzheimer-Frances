@@ -267,10 +267,11 @@ html, body {
   font-weight: 700;
 }
 
-/* Desktop only: hide pricing + closing */
+/* Desktop only: hide pricing + closing + mobile-only inline bits */
 @media (min-width: 769px) {
   .pricing { display: none; }
   .closing { display: none; }
+  .only-mobile { display: none; }
 }
 
 /* Mobile */
@@ -421,7 +422,7 @@ src="https://www.facebook.com/tr?id=1347145910208137&ev=PageView&noscript=1"/></
   <hr class="divider">
 
   <!-- 6. CTA tease + buttons -->
-  <div class="cta-tease">CLIQUEZ SUR LE BOUTON CI-DESSOUS<br>POUR RÉCLAMER VOTRE BONUS GRATUIT</div>
+  <div class="cta-tease">CLIQUEZ SUR LE BOUTON CI-DESSOUS<br>POUR RÉCLAMER VOTRE BONUS<span class="only-mobile"> GRATUIT</span></div>
   <div class="cta-buttons">
     <a class="cta-yes" href="https://go.centerpag.com/PPU38CQBSE6?upsell=true">
       <span class="label-mobile">Recevoir mon bonus spécial !</span>

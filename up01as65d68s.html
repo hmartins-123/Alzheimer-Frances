@@ -146,7 +146,7 @@ html, body { background: #000; font-family: 'Roboto', Arial, sans-serif; -webkit
   height: auto; display: block; margin: 0 auto;
 }
 
-/* Desktop only: hide pricing copy + final logo, BUT keep CTA buttons visible */
+/* Desktop only: hide pricing copy + final logo + mobile-only inline bits, BUT keep CTA buttons visible */
 @media (min-width: 769px) {
   .pricing > .from,
   .pricing > .for-only,
@@ -154,6 +154,7 @@ html, body { background: #000; font-family: 'Roboto', Arial, sans-serif; -webkit
   .pricing > .moment,
   .pricing > .instruction { display: none; }
   .logo-final { display: none; }
+  .only-mobile { display: none; }
 }
 
 /* Mobile */
@@ -292,7 +293,7 @@ src="https://www.facebook.com/tr?id=1347145910208137&ev=PageView&noscript=1"/></
 
   <!-- 5. Pricing (CTA tease + buttons above the price stack) -->
   <div class="pricing">
-    <div class="cta-tease">CLIQUEZ SUR LE BOUTON CI-DESSOUS<br>POUR RÉCLAMER VOTRE CADEAU GRATUIT</div>
+    <div class="cta-tease">CLIQUEZ SUR LE BOUTON CI-DESSOUS<br>POUR RÉCLAMER VOTRE CADEAU<span class="only-mobile"> GRATUIT</span></div>
     <div class="cta-buttons">
       <a class="cta-yes" href="https://go.centerpag.com/PPU38CQCKMU?upsell=true">
         <span class="label-mobile">Recevoir mon cadeau exclusif !</span>
