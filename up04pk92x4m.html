@@ -183,6 +183,57 @@ html, body { background: #ffffff; color: #0d1620; font-family: 'Inter', -apple-s
   .footer-inner { font-size: 16px; }
   .vsl-section { padding: 22px 12px 30px; }
 }
+
+  .cta-buttons {
+    width: 100%;
+    padding: 8px 0 24px;
+    text-align: center;
+  }
+  .cta-yes {
+    display: block;
+    width: 90%;
+    max-width: 400px;
+    margin: 12px auto 18px;
+    padding: 18px 0;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: #ffffff;
+    font-family: 'Roboto', 'Inter', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 5px 0 #15803d;
+    animation: pulse-yes 1.5s infinite;
+    line-height: 1.25;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+  }
+  .cta-yes .label-mobile { display: inline; }
+  .cta-yes .label-desktop { display: none; }
+  .cta-no {
+    display: block;
+    width: fit-content;
+    margin: 18px auto;
+    color: #000000;
+    font-family: 'Roboto', 'Inter', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-align: center;
+  }
+  @keyframes pulse-yes {
+    0%   { box-shadow: 0 5px 0 #15803d, 0 0 0 0 rgba(34, 197, 94, 0.7); }
+    70%  { box-shadow: 0 5px 0 #15803d, 0 0 0 15px rgba(34, 197, 94, 0); }
+    100% { box-shadow: 0 5px 0 #15803d, 0 0 0 0 rgba(34, 197, 94, 0); }
+  }
+  @media (min-width: 769px) {
+    .cta-yes .label-mobile { display: none; }
+    .cta-yes .label-desktop { display: inline; }
+    /* .cta-no stays visible on desktop too */
+  }
+
 </style>
 </head>
 <body>
@@ -218,8 +269,12 @@ html, body { background: #ffffff; color: #0d1620; font-family: 'Inter', -apple-s
 
   <div class="oculta">
     <div class="cta-caption">Si vous êtes prêt à aller au bout —</div>
-    <div class="funnel-wrapper">
-      <div id="hotmart-sales-funnel"></div>
+    <div class="cta-buttons">
+      <a class="cta-yes" href="https://go.centerpag.com/PPU38CQBSEN?upsell=true">
+        <span class="label-mobile">Oui, j'accepte l'invitation exclusive !</span>
+        <span class="label-desktop">Oui, j'accepte l'invitation exclusive !</span>
+      </a>
+      <a class="cta-no" href="https://pierrefountainer.online/down04-pq38xn7k">Non, ignorer cette invitation spéciale.</a>
     </div>
   </div>
 
@@ -231,14 +286,6 @@ html, body { background: #ffffff; color: #0d1620; font-family: 'Inter', -apple-s
 
 </div>
 
-<script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js" defer></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    if (window.checkoutElements) {
-      checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel');
-    }
-  });
-</script>
 <script>
   const minutos = 3;
   const segundos = 30;

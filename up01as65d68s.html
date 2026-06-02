@@ -191,6 +191,58 @@ html, body { background: #000; font-family: 'Roboto', Arial, sans-serif; -webkit
     margin-bottom: -10px;
   }
 }
+  .cta-buttons {
+    width: 100%;
+    padding: 8px 0 24px;
+    text-align: center;
+  }
+  .cta-yes {
+    display: block;
+    width: 90%;
+    max-width: 400px;
+    margin: 12px auto 18px;
+    padding: 18px 0;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: #ffffff;
+    font-family: 'Roboto', 'Inter', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 5px 0 #15803d;
+    animation: pulse-yes 1.5s infinite;
+    line-height: 1.25;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+  }
+  .cta-yes .label-mobile { display: inline; }
+  .cta-yes .label-desktop { display: none; }
+  .cta-no {
+    display: block;
+    width: fit-content;
+    margin: 18px auto;
+    color: #000000;
+    font-family: 'Roboto', 'Inter', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-align: center;
+  }
+  @keyframes pulse-yes {
+    0%   { box-shadow: 0 5px 0 #15803d, 0 0 0 0 rgba(34, 197, 94, 0.7); }
+    70%  { box-shadow: 0 5px 0 #15803d, 0 0 0 15px rgba(34, 197, 94, 0); }
+    100% { box-shadow: 0 5px 0 #15803d, 0 0 0 0 rgba(34, 197, 94, 0); }
+  }
+  @media (min-width: 769px) {
+    .cta-yes .label-mobile { display: none; }
+    .cta-yes .label-desktop { display: inline; }
+
+  }
+  @media (max-width: 768px) {
+    .cta-no { display: none; }
+  }
 </style>
 </head>
 <body>
@@ -222,36 +274,13 @@ src="https://www.facebook.com/tr?id=1347145910208137&ev=PageView&noscript=1"/></
     <img src="assets/images/cadeau-surprise.gif" alt="Cadeau Surprise">
   </div>
 
-  <!-- 5. Hotmart Sales Funnel -->
-  <div class="funnel-wrapper">
-    <div id="hotmart-sales-funnel-container" style="position: relative; overflow: hidden; font-family: Arial, sans-serif;">
-
-      <div id="hotmart-sales-funnel"></div>
-
-      <div id="cover-box-top" class="cover-box-top" style="
-          position: absolute; top: 0; left: 0; width: 100%; height: 180px;
-          background: white; z-index: 9999; pointer-events: auto;
-          display: flex; flex-direction: column; justify-content: center;
-          align-items: center; text-align: center; padding: 5px; box-sizing: border-box;
-      ">
-        <div class="cover-box-text">
-          <p>⚠️ Valable uniquement aujourd'hui ⚠️</p>
-          <h2 style="margin: 0; color: #56a512; font-weight: 900; line-height: 1.1; text-transform: uppercase;">
-            CLIQUEZ SUR LE BOUTON CI-DESSOUS<br>
-            ET RÉCLAMEZ VOTRE CADEAU GRATUIT !
-          </h2>
-        </div>
-      </div>
-
-      <div id="cover-box-bottom" class="cover-box-bottom" style="
-          position: absolute; bottom: 0; left: 0; width: 100%;
-          background: white; z-index: 9999; pointer-events: auto;
-          display: flex; justify-content: center; box-sizing: border-box;
-      ">
-        <img src="assets/images/triplo-books.webp" alt="Cadeau Surprise">
-      </div>
-
-    </div>
+  <!-- 5. CTA Buttons -->
+  <div class="cta-buttons">
+    <a class="cta-yes" href="https://go.centerpag.com/PPU38CQCKMU?upsell=true">
+      <span class="label-mobile">Recevoir mon cadeau exclusif !</span>
+      <span class="label-desktop">Oui, j'accepte le cadeau pour €60</span>
+    </a>
+    <a class="cta-no" href="https://pierrefountainer.online/up02bf28d91n">Non, ignorer cette offre imperdable.</a>
   </div>
 
   <!-- 6. Pricing -->
@@ -271,15 +300,6 @@ src="https://www.facebook.com/tr?id=1347145910208137&ev=PageView&noscript=1"/></
   </div>
 
 </div>
-
-<script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js" defer></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    if (window.checkoutElements) {
-      checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel');
-    }
-  });
-</script>
 
 </body>
 </html>
